@@ -1,0 +1,104 @@
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 ">
+        <form #f="ngForm" [formGroup]="signupForm"  method="post" action="#">
+                
+        <div class="row form-row">
+                <div class="col-md-6">
+                        <input pattern="^[a-zA-Z]*$" autofocus="autofocus" type="text" class="form-control" placeholder="First Name" tabindex="1" name="firstName"
+                        [(ngModel)]="user.firstName" formControlName="_firstName" id="firstName"/>
+                        <div *ngIf="signupForm.controls._firstName.touched && signupForm.controls._firstName.errors">
+                            <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._firstName.errors.required"> Please enter the valid First Name </div>
+                            <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._firstName.errors.pattern"> Use only alphabets</div>
+                        </div>
+                </div>
+                
+                <div class="col-md-6">
+                        <input pattern="^[a-zA-Z]*$" type="text" class="form-control" placeholder="Last Name"  tabindex="2" name="lastName"
+                        [(ngModel)]="user.lastName" formControlName="_lastName" id="lastName"/>
+                        <div *ngIf="signupForm.controls._lastName.touched && signupForm.controls._lastName.errors">
+                             <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._lastName.errors.required"> Please enter the valid Last Name </div>
+                             <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._lastName.errors.pattern">  Use only alphabets </div>
+                        </div>
+                </div>
+        </div>
+            <div class="row form-row">
+                <div class="col-md-12">
+                    <input type="email" class="form-control" placeholder="Email"  tabindex="3" name="email"
+                    [(ngModel)]="user.email" formControlName="_email" id="emailId"  pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                    <div *ngIf="signupForm.controls._email.touched && signupForm.controls._email.errors">
+                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._email.errors.required"> Please enter the valid emai address </div>
+                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._email.errors.pattern"> Please enter the valid Email Address for eg. raj@yahoo.com</div>
+                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._email.errors.emailShouldBeUnique"> Email already taken</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row form-row">
+                    <div class="col-md-12">
+                                <input type="password" name="password" [(ngModel)]="user.password" formControlName="_password" id="password" class="form-control"
+                                placeholder="Password" tabindex="4" validateEqual="_confirmPassword" reverse="true">
+                        <div *ngIf="signupForm.controls._password.touched && signupForm.controls._password.errors">
+                             <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._password.errors.required"> Please enter the valid password </div>
+                             <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="signupForm.controls._password.errors.minlength"> Please enter min {{signupForm.controls._password.errors.minlength.requiredLength}} characters
+                                            for password</div>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="row form-row">
+                    <div class="col-md-12">
+                                <input type="password" name="confirmPassword" [(ngModel)]="user.confirmPassword" formControlName="_confirmPassword" id="confirmPassword"
+                                class="form-control" placeholder="Confirm Password" tabindex="5" validateEqual="_password"
+                                reverse="false">
+                                <div *ngIf="signupForm.controls._confirmPassword.touched && signupForm.controls._confirmPassword.errors">
+                                                <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="!signupForm.controls._confirmPassword.errors.validateEqual">
+                                                    Confirm password not matching with password</div>
+                                            </div>
+                    </div>
+            </div>
+
+            <div class="row form-row">
+                    <div class="col-md-12">
+                            <input type="text" class="form-control" placeholder="Business Name"
+                            [(ngModel)]="user.businessName" formControlName="_businessName" id="businessName"  tabindex="6"/>
+                            <div *ngIf="signupForm.controls._businessName.touched && signupForm.controls._businessName.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="!signupForm.controls._businessName.errors.validateEqual">
+                                            Please enter the Business Name</div>
+                                    </div>
+                    </div>
+            </div>
+
+            <div class="row form-row">
+                    <div class="col-md-12">
+                            <input   type="text" name="phoneNumber" [(ngModel)]="user.phoneNumber" formControlName="_phoneNumber" id="phoneNumber" class="form-control"
+                            placeholder="Phone Number" tabindex="7"  />
+                            <div *ngIf="signupForm.controls._phoneNumber.touched && signupForm.controls._phoneNumber.errors">
+                                        <div class="alert alert-danger fa fa-exclamation-triangle" *ngIf="!signupForm.controls._phoneNumber.errors.validateEqual">
+                                            Please enter the Phone Number</div>
+                                    </div>
+                    </div>
+            </div>
+            <div *ngIf="isPolicyOpen" class="row form-row">
+                        <div class="col-md-12">
+                                <textarea class="form-control" rows="5" readonly>These terms and conditions (the "Terms") govern your access to and use of Skyrate's websites and mobile applications that link to or reference these Terms ("Site"). By accessing or using the Site, you are agreeing to these Terms and concluding a legally binding contract with Skyrate Inc.,a Skyrate corporation headquartered in San Francisco, California ("skyrate").Do not access or use the Site if you are unwilling or unable to be bound by the Terms.</textarea>
+                                
+                        </div>
+                </div>
+            <div class="row form-row ">
+                    <div class="col-md-12 privacy-policy">
+                                <input type="checkbox" id="box-3"   [checked]="policy" name=_policy (change)="policy = !policy" formControlName="_policy" style="font-size:14px;" required>
+                                <label for="box-3"> </label>
+                                I accept to <a>privacy policy</a> and <a (click)="termsAndPolicy(isPolicyOpen)">terms of use</a>                           
+                    </div>
+            </div>
+            <div class="row form-button" >
+                    <div class="col-md-12" >
+                            <button *ngIf="!isSpin" type="submit" [disabled]="!f.valid" (click)="onSubmit()"class="btn btn-primary btn-signIn">Submit</button>
+                            <span *ngIf="isSpin"><i class="fa fa-spinner fa-spin" style="font-size:28px;"></i></span>
+                   </div>
+                  
+            </div>
+            <div class="row">&nbsp;</div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,103 @@
+<!-- <div id="message">
+    <div class="col-md-12 col-sm-12 col-sm-12">
+        <div class="message-layer">
+            <div class="row">
+
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container">
+<h3 class=" text-center"></h3>
+<div class="messaging">
+      <div class="inbox_msg">
+        <div class="inbox_people">
+          <div class="headind_srch">
+            <div class="recent_heading">
+              <h4 style="color: white;">Messages</h4>
+            </div>
+            <!-- <div class="srch_bar">
+              <div class="stylish-input-group">
+                <input type="text" class="search-bar"  placeholder="Search" >
+                <span class="input-group-addon">
+                <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                </span> </div>
+            </div> -->
+          </div>
+          <div class="inbox_chat">
+            <div *ngFor="let x of inboxes;">
+              <div class="chat_list">
+                <div class="chat_people" (click)="getByConversation(x.conversationId, x.toId, x.fromId, x.fromName ,x.toName)">
+                  <div class="chat_img"> <img src="assets/img/boy.png" class="img-responsive" alt="sunil"> </div>
+                  <div class="chat_ib">
+                    <h5  *ngIf="userId != x.fromId; else toName">{{x.fromName}} <span class="chat_date">{{x.dateTime | date: 'MMM dd, yyyy'}}    |    {{x.dateTime | date:'hh:mm a'}}</span></h5>
+                  <ng-template #toName><h5>{{x.toName}} <span class="chat_date">{{x.dateTime | date: 'MMM dd, yyyy'}}    |    {{x.dateTime | date:'hh:mm a'}}</span></h5></ng-template>
+                   <div>
+                      <span class="sub-text"><span  *ngIf="userId == x.fromId">You: </span>{{x.message}}</span>
+                      <span class="badge" *ngIf="x.readCount != 0 && userId != x.fromId">{{x.readCount}}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div  class="contact-profile">
+          <div *ngIf="toName">
+            <img src="assets/img/boy.png" class="img-responsive header-img"  alt="">
+            <p class="header-name">{{toName}}</p>
+          </div>
+          </div>
+        <div  *ngIf="!toName" class="outer" >
+          <div class="default-text">
+            <div class="inner">
+              <img src="assets/img/chat.png"  class="default-img"alt="chat" />
+              <h4>Start your conversation by choosing user from list</h4>
+            </div>
+          </div>
+          
+        </div>
+
+        <div  *ngIf="toName" class="mesgs">
+          <div class="msg_history" #scrollMe>
+              <div *ngFor="let x of messages;">
+            <div  class="incoming_msg">
+              <!-- <div class="incoming_msg_img"> <img src="https://ptetutorials.com/images/user-profile.png" alt="sunil"> </div> -->
+              <div *ngIf="x.defaultMessage == 0; else defaultMessage" class="received_msg" >
+                <div  class="received_withd_msg" [ngStyle]="getStyles(x.fromId)">
+                  <p [ngStyle]="getTextStyles(x.fromId)">{{x.message}}</p>
+                  <span class="time_date"> {{x.dateTime | date: 'MMM dd, yyyy'}}    |    {{x.dateTime | date:'hh:mm a'}}</span></div>
+                  
+              </div>
+              <ng-template #defaultMessage>
+                  <div class="default_msg">
+                    {{x.message}}
+                  </div>
+                </ng-template>
+            </div>
+            <!-- <div  class="outgoing_msg">
+              <div class="sent_msg">
+                <p>{{x.message}}</p>
+                <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+            </div> -->
+            </div>
+           
+          </div>
+          <div class="type_msg">
+            <div class="input_msg_write">
+              <input id="input"type="text" class="write_msg" placeholder="Type a message" (keyup.enter)="sendMessage()" [(ngModel)]="message"/>
+              <button class="msg_send_btn" type="button" (click)="sendMessage()"><i class="fa fa-paper-plane-o" aria-hidden="true"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+     
+      </script>
+      
+    
+      
+    </div></div>

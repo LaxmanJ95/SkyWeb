@@ -1,0 +1,17 @@
+.list-row{
+    padding: 15px;
+    /* margin: 10px; */
+    background-color: white;
+}
+.listheader-row{
+    padding: 15px;
+    /* margin: 10px; */
+    background-color: #e6e0e0;
+}
+.user-details{
+    padding: 5px;
+}
+.user-info{
+    padding: 10px;
+    background-color: white;
+}

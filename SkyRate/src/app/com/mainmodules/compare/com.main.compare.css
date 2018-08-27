@@ -1,0 +1,131 @@
+.col-margin{
+    margin-right: -15px;
+    margin-left: -15px;
+    text-align: center;
+}
+.name-row{
+    height: 130px;
+}
+.table{
+    border-right: 1px solid #a6a8ab;
+    border-bottom: 1px solid #a6a8ab;
+}
+.data-padding{
+   height: 75px;
+}
+.header-row{
+    font-size:14px;
+    height: 130px;
+}
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #a6a8ab;
+}
+.table-responsive{
+    display: -webkit-box;
+    width: 100%;
+    overflow-x: hidden;
+}
+.table-header{
+    background-color: #e5e5e8;
+}
+.data-font{
+    font-size: 15px;
+}
+.overall-row{
+    margin: 15px;
+    padding: 15px;
+}
+.delete-business{
+    display: inherit;
+    font-size: 11px;
+    cursor: pointer;
+    float: right;
+    padding: 3px;
+    color:red;
+}
+.address-name{
+    font-weight: 100;
+    font-size: 11px;
+}
+.review-count{
+    font-size: 10px;
+}
+/* .pricing, .pricing_compare { 
+    border: none;
+  }
+  
+  
+  .pricing_compare > input, .pricing_default > input { display: none; } 
+  .pricing_compare > label:before, .pricing_default > label:before { 
+    margin: 8px;
+    font-size: 17px;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+  }
+  
+  .pricing > .half:before, .pricing_compare > .half:before { 
+    content: "\f089";
+    position: absolute;
+  }
+  
+  .pricing > label, .pricing_compare > label { 
+    color: #ddd; 
+   float: right; 
+   cursor: pointer;
+  }
+  
+  
+  
+
+  .pricing_compare > input:checked ~ label,
+  .pricing_compare:not(:checked) > label:hover, 
+  .pricing_compare:not(:checked) > label:hover ~ label { color: #FFC107;  } 
+  
+  .pricing_compare > input:checked + label:hover, 
+  .pricing_compare > input:checked ~ label:hover,
+  .pricing_compare > label:hover ~ input:checked ~ label, 
+  .pricing_compare > input:checked ~ label:hover ~ label{ color: #ffc10769;  } 
+
+  .pricing, .pricing_compare {
+    width: 155px !important;
+    background-color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-top: 5px;
+    
+    border-radius: 5px;
+}
+
+.pricing_compare{
+    margin: 0 auto;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+.speed_compare, .quality_compare, .overall_rating{
+    background-color: white;
+    margin: 0 auto;
+    float: none;
+    padding-top: 3px;
+    padding-bottom: 3px;
+
+}
+.speed_compare > label, .overall_rating > quality, .pricing_compare > label{
+    float: inherit;
+}
+.rating > label {
+    float: inherit !important;
+} */
+
+.quality, .speed, .pricing, .rating {
+    margin: 0 auto;
+    float: inherit;
+    padding-top: 2px;
+    padding-bottom: 2px;
+
+}
+
+

@@ -1,0 +1,45 @@
+.anton-font{
+    font-family: 'Anton', sans-serif;
+    margin-bottom: 0px;
+}
+.image-content{
+    margin-top: 15px;
+}
+.popular-searches{
+    text-align: center;
+    margin-top: 20px;
+}
+.highlight{
+    cursor: pointer;
+}
+.headline{
+    font-size: 14px;
+    color: grey;
+    font-family:'Montserrat', sans-serif;
+}
+.col-spacing{
+    margin-bottom: 15px;
+}
+.mainbusiness-container{
+    padding: 15px;
+    background-color: white;
+    border-radius: 6px;
+}
+.trending-container{
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+}
+.business-name{
+    padding: 5px;
+    height: 110px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.business-address{
+    margin: 10px;
+    text-align: left;
+    font-size: 11px;
+}
+.reviewcount{
+    font-size: 12px;
+}

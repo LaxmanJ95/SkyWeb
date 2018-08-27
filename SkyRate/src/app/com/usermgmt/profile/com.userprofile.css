@@ -1,0 +1,25 @@
+#userprofile{
+    padding: 15px;
+}
+.user-container{
+    margin: 0 auto;
+    padding: 15px;
+}
+.tab-header{
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+.new-tab{
+    color:orange;
+    border-bottom: 3px solid orange;
+}
+.list-space{
+    padding-right:30px;
+}
+.profileTab, .passwordTab{
+    padding: 15px;
+}
+.alert{
+    padding: 17px 50px;
+}
